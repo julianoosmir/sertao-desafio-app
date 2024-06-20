@@ -1,0 +1,20 @@
+<div id="wapper">
+  <div class="panel">
+    <h2> Vendinha da <span>Vó Cecília</span></h2>
+    <br/>
+    <form [formGroup]="loginForm" action="#">
+      <div>
+        <label>Username : </label>
+        <br/>
+        <input class="form-control" type="username" name="username" id="username" formControlName="username" placeholder="Enter username">
+      </div>
+      <br/>
+      <div>
+        <label>Password : </label>
+        <br/>
+        <input class="form-control" type="password" name="senha" formControlName="senha" placeholder="Password">
+      </div>
+      <button type="submit" (click)=handleLogin() class="button"> Entrar </button>
+    </form>
+  </div>
+</div>

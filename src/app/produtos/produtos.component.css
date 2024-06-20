@@ -1,0 +1,52 @@
+div#wapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-height: 180vh;
+}
+div#wapper div.panel {
+  background-color: #fff;
+  box-shadow: 1px 6px 8px 2px rgba(0, 0, 0, 0.42);
+  overflow: scroll;
+  top: 0px;
+  padding: 18px 6% 0px 6%;
+  margin: 1px 1px 2px 3px;
+  border: 1px solid rgba(147, 184, 189, 0.8);
+  border-radius: 15px;
+  height: 90%;
+  width: 90%;
+
+}
+.card{
+  margin-left: 50px;
+  margin-top: 20px;
+  height: 95%;
+}
+.btn-text-right{
+  margin-left: 90%;
+  text-align: right;
+  margin-bottom: 20px;;
+  display: flex;
+  width: 40px;
+}
+.text-right{
+  margin-left: 90%;
+  text-align: right;
+  margin-bottom: 20px;;
+  display: flex;
+  width: 40px;
+}
+
+
+@media (max-width: 1000px){
+  div#wapper div.panel{
+    width: 80%;
+  }
+  .card{
+    margin-left: 30px;
+  }
+
+}

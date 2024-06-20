@@ -1,0 +1,49 @@
+<div id="wapper">
+  <div class="panel">
+    <h2> Cadastro <span> Produto</span></h2>
+    <br/>
+    <form [formGroup]="produtoForm" action="#">
+      <div>
+        <label>Nome : </label>
+        <br/>
+        <input class="form-control" name="nome" formControlName="nome">
+      </div>
+      <br/>
+      <div>
+        <label>Descricao : </label>
+        <br/>
+        <input class="form-control" name="descricao" id="descricao" formControlName="descricao">
+        <div *ngIf="produtoForm?.get('descricao')?.invalid && produtoForm?.get('descricao')?.touched"
+             class="text-danger">
+          Por favor insira uma descrição válida.
+        </div>
+      </div>
+      <br/>
+      <div>
+        <label for="preco">Preço : </label>
+        <br/>
+        <input class="form-control" name="preco" [currencyMask]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }"
+               id="preco" formControlName="preco"
+               aria-describedby="preco">
+      </div>
+      <br/>
+
+      <div>
+        <label for="quantidade">Quantidade : </label>
+        <br/>
+        <input class="form-control" type="number" name="quantidade" id="quantidade" formControlName="quantidade"
+               aria-describedby="quantidade">
+
+      </div>
+      <br/>
+      <div class="form-group">
+        <label> imagem : </label>
+        <br/>
+        <input class="form-control" name="imagem" formControlName="imagem" id="imagem">
+      </div>
+      <br/>
+      <button type="submit" (click)="salvar()" class="button btn-text-right ml-auto"> Salvar</button>
+    </form>
+
+  </div>
+</div>

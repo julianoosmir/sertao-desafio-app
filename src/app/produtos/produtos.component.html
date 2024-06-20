@@ -1,0 +1,26 @@
+<div id="wapper">
+  <div class="panel">
+    <div class="card-group">
+      <div class="text-right">
+        <a class="btn btn-primary btn-text-right" [routerLink]="['/cadastro-produto']">
+          <br/>
+          <i class="bi bi-plus-circle"></i>
+        </a>
+      </div>
+
+      <div *ngFor="let prod of produtos">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" [src]=prod.imagem alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{ prod.nome }}</h5>
+            <p class="card-text">{{ prod.descricao }}</p>
+            <h5 class="card-title"> R$ {{ prod.preco }}</h5>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
