@@ -1,7 +1,7 @@
 <div id="wapper">
   <div class="panel">
     <div class="card-group">
-      <div class="text-right">
+      <div  *ngIf="getRole() === 'admin'" class="text-right">
         <a class="btn btn-primary btn-text-right" [routerLink]="['/cadastro-produto']">
           <br/>
           <i class="bi bi-plus-circle"></i>
