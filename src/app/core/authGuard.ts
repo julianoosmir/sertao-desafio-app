@@ -1,11 +1,10 @@
-import {ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree} from "@angular/router";
+import {ActivatedRouteSnapshot, Router} from "@angular/router";
 import {Observable} from "rxjs";
 import {inject} from "@angular/core";
 import {AuthService} from "./auth.service";
 import {AlertService} from "./alert.service";
 
-export const canActivate = (next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean
-  | UrlTree | Promise<boolean | UrlTree> | Observable<boolean | UrlTree> => {
+export const canActivate = (next: ActivatedRouteSnapshot):  Observable<boolean> | Promise<boolean> | boolean => {
 
   const authService = inject(AuthService);
   const route = inject(Router);
