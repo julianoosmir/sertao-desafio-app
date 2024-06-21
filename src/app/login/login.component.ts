@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../core/auth.service";
+import {AlertService} from "../core/alert.service";
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,13 @@ export class LoginComponent {
 
   loginForm: any;
 
-  errorMessage = 'Invalid Credentials';
   loginMessage: string | any;
   invalidLogin = false;
   loginSuccess = false;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
+              private alertService: AlertService,
               private activatedRoute: ActivatedRoute,
               private authenticationService: AuthService) {
     this.loginForm = this.formBuilder.group({
@@ -41,14 +42,14 @@ export class LoginComponent {
           this.invalidLogin = true;
           this.loginSuccess = false;
           this.loginMessage = result;
-          //this.showSnackbarTopPosition(this.loginMessage, '', 30000)
+          this.alertService.showAlertDanger(this.loginMessage);
         } else {
           this.invalidLogin = false;
           this.loginSuccess = true;
           this.authenticationService.setToken(result);
           this.authenticationService.logged();
           this.loginMessage = 'Login Successful.';
-          //this.showSnackbarTopPosition(this.loginMessage, '', 30000)
+          this.alertService.showAlertSuccess(this.loginMessage);
           this.router.navigate(['/produtos']);
         }
       })

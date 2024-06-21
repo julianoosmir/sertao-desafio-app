@@ -7,7 +7,8 @@ import {CadastroProdutoComponent} from "./cadastro-produto/cadastro-produto.comp
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'produtos', component: ProdutosComponent},
-  {path:'cadastro-produto',component:CadastroProdutoComponent}
+  {path:'cadastro-produto',component:CadastroProdutoComponent},
+  {path:'cadastro-produto/:id',component:CadastroProdutoComponent}
 ];
 
 @NgModule({

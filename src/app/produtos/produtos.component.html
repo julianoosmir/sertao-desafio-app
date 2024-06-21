@@ -14,8 +14,13 @@
           <div class="card-body">
             <h5 class="card-title">{{ prod.nome }}</h5>
             <p class="card-text">{{ prod.descricao }}</p>
-            <h5 class="card-title"> R$ {{ prod.preco }}</h5>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title"> R$ {{ prod.preco |  currency:'':''  }}</h5>
+            <div *ngIf="getRole() === 'admin'">
+              <a href="#" class="btn btn-success" [routerLink]="['/cadastro-produto',prod.id]">Editar</a>
+              <a class="btn btn-danger" (click)="deletar(prod.id)">
+                <i class="bi bi-trash"></i>
+              </a>
+            </div>
 
           </div>
         </div>

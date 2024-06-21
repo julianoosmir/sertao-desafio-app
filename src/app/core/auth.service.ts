@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {CookieService} from "ngx-cookie-service";
 import {HttpClient} from "@angular/common/http";
@@ -24,11 +24,10 @@ export class AuthService {
     const token = this.getToken();
     const decoded = jwtDecode(token);
     const jwt = decoded as JwtDto;
-    return jwt.role.name;
+    return jwt.role[0].name;
   }
   getToken(){
-    const token = this.cookieService.get('token');
-    return token;
+    return this.cookieService.get('token');
   }
 
   logged(){

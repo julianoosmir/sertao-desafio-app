@@ -1,4 +1,3 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,13 +11,17 @@ import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.co
 import {NgxMaskDirective, provideNgxMask} from "ngx-mask";
 import {DecimalPipe} from "@angular/common";
 import {NgxCurrencyDirective} from "ngx-currency";
+import { AlertComponent } from './alert/alert.component';
+import {ModalModule} from "ngx-bootstrap/modal";
+import {NgModule} from "@angular/core";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProdutosComponent,
-    CadastroProdutoComponent
+    CadastroProdutoComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import {NgxCurrencyDirective} from "ngx-currency";
     HttpClientModule,
     ReactiveFormsModule,
     NgxMaskDirective,
-    NgxCurrencyDirective
+    NgxCurrencyDirective,
+    ModalModule.forRoot(),
   ],
   providers: [
     provideClientHydration(),

@@ -11,8 +11,8 @@ div#wapper div.panel {
   background-color: #fff;
   box-shadow: 1px 6px 8px 2px rgba(0, 0, 0, 0.42);
   overflow: scroll;
-  top: 0px;
-  padding: 18px 6% 0px 6%;
+  top: 0;
+  padding: 18px 6% 0 6%;
   margin: 1px 1px 2px 3px;
   border: 1px solid rgba(147, 184, 189, 0.8);
   border-radius: 15px;
@@ -40,6 +40,9 @@ div#wapper div.panel {
   width: 40px;
 }
 
+.btn{
+  margin: 10px;
+}
 
 @media (max-width: 1000px){
   div#wapper div.panel{
